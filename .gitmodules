@@ -1,0 +1,4 @@
+[submodule "deps/heroicons"]
+    path = deps/heroicons
+    url = https://github.com/tailwindlabs/heroicons
+
