@@ -109,7 +109,7 @@ defmodule PokemonWeb.PokemonLive.Index do
     %{
       name: String.capitalize(body["name"]),
       id: body["id"],
-      image: body["sprites"]["other"]["official-artwork"]["front_default"],
+      image: body["sprites"]["other"]["showdown"]["front_default"],
       sprites: body["sprites"],
       weight: body["weight"],
       height: body["height"],
