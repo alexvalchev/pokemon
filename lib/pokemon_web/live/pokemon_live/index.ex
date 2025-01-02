@@ -39,26 +39,36 @@ defmodule PokemonWeb.PokemonLive.Index do
       </div>
     </div> --%>
 
-    <div class="flex gap-2">
-      <input
-        type="text"
-        name="search"
-        value={}
-        placeholder="Enter Pokémon name..."
-        class="flex-1 mb-10 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        autocomplete="off"
-      />
-      <button
-        type="submit"
-        disabled={}
-        class="bg-blue-500 mb-10 text-white px-4 py-2 rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        Search
-      </button>
-    </div>
+  <article class="card w-48 bg-base-100 shadow-xl border-2 border-gray-500">
+  <div class="card-body p-4 ">
+    <img
+      class="self-center"
+      alt={@pokemon.name}
+      width="100"
+      src={@pokemon.image} 
+    />
+    <h2 class="card-title self-center"><strong>Name:</strong> <%= @pokemon.name %></h2>
+    <div class="divider mx-[-18px] my-0 border-color-gray-400"></div>
+    <ul>
+      
+      <li><strong>Base XP:</strong> <%= @pokemon.base_xp %></li>      
+      <li><strong>Height:</strong> <%= @pokemon.height %></li>
+      <li><strong>Weight:</strong> <%= @pokemon.weight %></li>
+      <li><strong>ID:</strong> <%= @pokemon.id %></li>
+    </ul>
+  </div>
+</article>
 
-    <div class="slide-container">
+
+
+    <%!-- <div class="slide-container">
+
       <div class="wrapper">
+
+      
+
+
+
         <div class="clash-card barbarian">
           <div class="clash-card__image clash-card__image--barbarian">
             <img src={@pokemon.image} alt={@pokemon.name} />
@@ -82,23 +92,19 @@ defmodule PokemonWeb.PokemonLive.Index do
               <div class="stat"><%= @pokemon.base_xp %></div>
               <div class="stat-value">Base XP</div>
             </div>
+
           </div>
         </div>
+
         <!-- end clash-card barbarian-->
       </div>
+
       <!-- end wrapper -->
-      <div class="inline-flex">
-        <button
-          phx-click="prev"
-          class="bg-gray-300 pl-2 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
-        >
-          Prev
-        </button>
-        <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
-          Next
-        </button>
-      </div>
-    </div>
+      <!-- ====== Pagination Section Start -->
+      
+      <!-- ====== Pagination Section End -->
+    </div> --%>
+
     <!-- end container -->
     """
   end
@@ -114,6 +120,7 @@ defmodule PokemonWeb.PokemonLive.Index do
       weight: body["weight"],
       height: body["height"],
       base_xp: body["base_experience"] || "?"
+      
     }
   end
 end
